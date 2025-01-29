@@ -26,12 +26,12 @@
             height: 100vh;
             margin: 0;
             overflow: hidden;
-            background-color: #f0f0f0; /* Fondo opcional */
+            background-color: #f0f0f0;
         }
 
         #mybook {
-            width: 80vw !important;  /* 80% del ancho de la pantalla */
-            height: 80vh !important; /* 80% del alto de la pantalla */
+            width: 80vw !important;
+            height: 80vh !important;
             max-width: 100%;
             max-height: 100%;
             display: flex;
@@ -40,27 +40,21 @@
         }
     </style>
 
-    <!-- Script para ajustar tamaño del libro -->
+    <!-- Script para inicializar el libro correctamente -->
     <script>
         $(document).ready(function () {
-            function ajustarTamaño() {
-                let windowWidth = $(window).width() * 0.8;  // Ajusta al 80% del ancho
-                let windowHeight = $(window).height() * 0.8; // Ajusta al 80% del alto
-
-                $("#mybook").booklet({
-                    width: windowWidth,
-                    height: windowHeight,
-                    auto: false,
-                    overlays: true,
-                    pagePadding: 10,
-                    speed: 500
-                });
-            }
-
-            ajustarTamaño(); // Ejecutar al cargar
-
-            $(window).resize(function () {
-                ajustarTamaño(); // Ajustar al cambiar tamaño de la ventana
+            $("#mybook").booklet({
+                width: "80%",
+                height: "90%",
+                auto: false,
+                overlays: true,
+                pagePadding: 10,
+                speed: 500,
+                closed: true,         // Activa modo libro con portada y contraportada
+                covers: true,         // Muestra la portada como una sola página
+                pageNumbers: false,   // Oculta los números de página
+                start: 0,             // Inicia en la primera página
+                direction: "LTR"      // Dirección de lectura de izquierda a derecha
             });
         });
     </script>
@@ -70,78 +64,72 @@
     <header></header>
     <article>
         <div id="mybook">
+            <!-- Portada (se mostrará sola) -->
             <div class="cover">
                 <h3></h3>
                 <div class="imaCenter">
-                    <img alt="" src="ima/IP_Final.png">
+                    <img alt="Portada" src="ima/IP_Final.png">
                 </div>
                 <h4></h4>
             </div>
-            
-            <!-- Páginas del libro -->
-            <div class="pRight" id="pag1">
-                <p style="text-align:justify;">
-                    <span style="font-size:12px;color:#000000"></span>
-                </p>
+
+            <!-- Página en blanco para que la primera hoja sea doble -->
+            <div class="pLeft"></div>
+
+            <!-- Contenido del libro -->
+            <div class="pRight">
                 <div class="imaCenter">
-                    <img alt="" src="ima/Ima1_P2I1.png">
+                    <img alt="Página 1" src="ima/Ima1_P2I1.png">
                 </div>
             </div>
 
             <div class="pLeft">
-                <p style="text-align:justify;">
-                    <span style="font-size:12px;color:#000000"></span>
-                </p>
                 <div class="imaCenter">
-                    <img alt="" src="ima/Ima1_P3I1.png">
+                    <img alt="Página 2" src="ima/Ima1_P3I1.png">
                 </div>
             </div>
 
             <div class="pRight">
-                <p style="text-align:justify;">
-                    <span style="font-size:12px;color:#000000"></span>
-                </p>
                 <div class="imaCenter">
-                    <img alt="" src="ima/Ima1_P4I1.png">
+                    <img alt="Página 3" src="ima/Ima1_P4I1.png">
                 </div>
             </div>
 
             <div class="pLeft">
-                <p style="text-align:justify;">
-                    <span style="font-size:12px;color:#000000"></span>
-                </p>
                 <div class="imaCenter">
-                    <img alt="" src="ima/Ima1_P5I1.png">
+                    <img alt="Página 4" src="ima/Ima1_P5I1.png">
                 </div>
             </div>
 
             <div class="pRight">
-                <p style="text-align:justify;">
-                    <span style="font-size:12px;color:#000000"></span>
-                </p>
                 <div class="imaCenter">
-                    <img alt="" src="ima/Ima1_P6I1.png">
+                    <img alt="Página 5" src="ima/Ima1_P6I1.png">
                 </div>
             </div>
 
             <div class="pLeft">
-                <p style="text-align:justify;">
-                    <span style="font-size:12px;color:#000000"></span>
-                </p>
                 <div class="imaCenter">
-                    <img alt="" src="ima/Ima1_P7I1.png">
+                    <img alt="Página 6" src="ima/Ima1_P7I1.png">
                 </div>
             </div>
 
             <div class="pRight">
-                <p style="text-align:justify;">
-                    <span style="font-size:12px;color:#000000"></span>
-                </p>
                 <div class="imaCenter">
-                    <img alt="" src="ima/Ima1_P8I1.png">
+                    <img alt="Página 7" src="ima/Ima1_P8I1.png">
                 </div>
             </div>
 
+            <!-- Última página en blanco -->
+            <div class="pLeft"></div>
+
+            <!-- Contraportada (se mostrará sola) -->
+            <div class="cover">
+                <h3></h3>
+                <div class="imaCenter">
+                    <img alt="Contraportada" src="ima/IP_Final.png">
+                </div>
+                <h4></h4>
+            </div>
         </div>
     </article>
 </body>
