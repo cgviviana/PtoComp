@@ -1,47 +1,46 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $("#mybook").booklet({
-        name: "Libro Interactivo",
-        width: 900,  
-        height: 600,  
-        speed: 800,  
-        direction: "LTR",
-        startingPage: 0,  // Inicia en la portada
-        easing: "easeInOutQuad",
-        easeIn: "easeInQuad",
-        easeOut: "easeOutQuad",
-        closed: true,  // Activa portada y contraportada
-        covers: true,  // Habilita portada
-        autoCenter: true,  
+        width: "90vw",
+        height: "85vh",
+        closed: true,
+        covers: true,
+        autoCenter: true,
+        speed: 800,
         pagePadding: 10,
-        pageBorder: 0,
-        pageNumbers: true,  
-        manual: true,  
-        hovers: true,
-        hoverWidth: 50,  
-        hoverSpeed: 500,
-        hoverThreshold: 0.5,
+        pageNumbers: true,
+        manual: true,
         overlays: true,
-        arrows: true, // Habilitar flechas de navegación
-        arrowsHide: false,
-        cursor: "pointer",
+        hoverWidth: 50,
+        hoverSpeed: 500,
+        hoverThreshold: 0.25,
+        arrows: true,
         keyboard: true,
+        next: ".b-next",
+        prev: ".b-prev",
         shadows: true,
         shadowTopFwdWidth: 166,
         shadowTopBackWidth: 166,
         shadowBtmWidth: 50,
-        before: function(){ console.log("Cambiando de página..."); },
-        after: function(){ console.log("Nueva página mostrada."); }
+        before: function () { },
+        after: function () { }
     });
 
-    // Ajustar navegación con botones visibles
-    $(".b-arrow-prev").on("click", function() {
-        $("#mybook").booklet("prev");
+    // Ajustar tamaño dinámicamente
+    $(window).resize(function () {
+        let windowWidth = $(window).width() * 0.9;
+        let windowHeight = $(window).height() * 0.85;
+        $("#mybook").booklet("option", {
+            width: windowWidth,
+            height: windowHeight
+        });
     });
-
-    $(".b-arrow-next").on("click", function() {
-        $("#mybook").booklet("next");
-    });
-
-    $(".b-prev").attr("tabindex", "0");
-    $(".b-next").attr("tabindex", "0");
 });
+
+// Función para reproducir audio
+function playIt(sound) {
+    var sounds = document.getElementsByTagName("audio");
+    for (var i = 0; i < sounds.length; i++) sounds[i].pause();
+    var file = document.getElementById(sound);
+    file.load();
+    file.play();
+}
