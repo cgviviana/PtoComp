@@ -1,19 +1,16 @@
 $(document).ready(function(){
    $("#mybook").booklet({
-      width: "90vw",  // Se adapta al ancho de la pantalla
-      height: "85vh", // Se adapta a la altura de la pantalla
+      name: "",
+      width: 1000, // Ajuste del ancho para mejor visualización
+      height: 700, // Ajuste del alto para mejor visualización
       speed: 1000,
       direction: "LTR",
-      startingPage: 1,
+      startingPage: 0, // Asegurar que comience desde la portada
       easing: "easeInOutQuad",
       easeIn: "easeInQuad",
       easeOut: "easeOutQuad",
-      closedFrontTitle: "Beginning",
-      closedFrontChapter: "Beginning of Book",
-      closedBackTitle: "End",
-      closedBackChapter: "End of Book",
-      covers: true,
-      closed: true,
+      closed: true, // Habilitar modo libro cerrado
+      covers: true, // Incluir portada y contraportada
       autoCenter: true,
       pagePadding: 10,
       pageBorder: 0,
@@ -31,40 +28,10 @@ $(document).ready(function(){
       previousControlText: "Previous",
       nextControlTitle: "Next",
       previousControlTitle: "Previous",
-      arrows: true, // Activar flechas de navegación para mejorar la interacción
+      arrows: true, // Activar flechas de navegación
       arrowsHide: false,
       cursor: "pointer",
       hash: false,
       hashTitleText: " - Page ",
       keyboard: true,
-      next: null,
-      prev: null,
-      auto: false,
-      delay: 5000,
-      pause: null,
-      play: null,
-      menu: null,
-      pageSelector: true, // Activar selector de páginas
-      chapterSelector: false,
-      shadows: true,
-      shadowTopFwdWidth: 166,
-      shadowTopBackWidth: 166,
-      shadowBtmWidth: 50,
-      before: function(){},
-      after: function(){}
-   });
-
-   $(".b-prev").attr("tabindex","0");
-   $(".b-next").attr("tabindex","0");
-});
-
-// Función para reproducir sonidos correctamente
-function playIt(sound){
-   var sounds = document.getElementsByTagName("audio");
-   for(var i = 0; i < sounds.length; i++) {
-      sounds[i].pause();
-   }
-   var file = document.getElementById(sound);
-   file.load();
-   file.play();
-}
+     
