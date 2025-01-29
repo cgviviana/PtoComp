@@ -1,8 +1,8 @@
 $(document).ready(function(){
    $("#mybook").booklet({
       name: "Mi Libro",
-      width: 800, // Tamaño más adecuado
-      height: 600, 
+      width: 900, // Ajuste del tamaño
+      height: 600,
       speed: 800,
       direction: "LTR",
       startingPage: 0, // Iniciar en la portada
