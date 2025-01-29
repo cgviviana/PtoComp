@@ -21,7 +21,7 @@
     <style>
         /* Fondo fijo para que no se duplique */
         body {
-            background: url('ima/fondo.png') no-repeat center center fixed; 
+            background: url('ima/fondo.png') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -31,124 +31,102 @@
             overflow: hidden;
         }
 
-        /* Asegurar que el libro se mantiene centrado y en tamaño adecuado */
+        /* Asegurar que el libro se mantenga centrado y en tamaño adecuado */
         #container {
+            width: 90%;
+            max-width: 1200px;
+            height: 90vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            height: 100vh;
         }
 
         #mybook {
-            width: 85vw !important;
-            height: 90vh !important;
-            max-width: 100%;
-            max-height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: white;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            height: 100%;
         }
     </style>
-
-    <!-- Script para inicializar el libro con el tamaño correcto -->
-    <script>
-        $(document).ready(function () {
-            $("#mybook").booklet({
-                width: "85%",
-                height: "90%",
-                auto: false,
-                overlays: true,
-                pagePadding: 10,
-                speed: 500,
-                closed: true,         // Portada sola
-                covers: true,         // Activa la portada individual
-                pageNumbers: false,   // Quita los números de página
-                start: 0,             // Inicia en la primera página
-                direction: "LTR"      // Dirección de lectura
-            });
-
-            // Ajustar tamaño cuando se cambia la ventana
-            $(window).resize(function () {
-                $("#mybook").booklet("option", {
-                    width: $(window).width() * 0.85,
-                    height: $(window).height() * 0.9
-                });
-            });
-        });
-    </script>
-
 </head>
+
 <body>
     <div id="container">
         <div id="mybook">
-            <!-- Portada -->
             <div class="cover">
+                <h3>Pensamiento Computacional</h3>
                 <div class="imaCenter">
-                    <img alt="Portada" src="ima/IP_Final.png">
+                    <img alt="" src="ima/IP_Final.png">
                 </div>
+                <h4>Con la profe Vivy</h4>
             </div>
-
-            <!-- Página en blanco para que la primera hoja sea doble -->
+            
             <div class="pLeft"></div>
 
-            <!-- Páginas del contenido -->
-            <div class="pRight">
+            <div class="pRight" id="pag1">
+                <p style="text-align:justify;">
+                    <span style="font-size:12px;color:#000000"></span>
+                </p>
                 <div class="imaCenter">
-                    <img alt="Página 1" src="ima/Ima1_P2I1.png">
+                    <img alt="" src="ima/Ima1_P2I1.png">
                 </div>
             </div>
 
             <div class="pLeft">
+                <p style="text-align:justify;">
+                    <span style="font-size:12px;color:#000000"></span>
+                </p>
                 <div class="imaCenter">
-                    <img alt="Página 2" src="ima/Ima1_P3I1.png">
+                    <img alt="" src="ima/Ima1_P3I1.png">
                 </div>
             </div>
 
             <div class="pRight">
+                <p style="text-align:justify;">
+                    <span style="font-size:12px;color:#000000"></span>
+                </p>
                 <div class="imaCenter">
-                    <img alt="Página 3" src="ima/Ima1_P4I1.png">
+                    <img alt="" src="ima/Ima1_P4I1.png">
                 </div>
             </div>
 
             <div class="pLeft">
+                <p style="text-align:justify;">
+                    <span style="font-size:12px;color:#000000"></span>
+                </p>
                 <div class="imaCenter">
-                    <img alt="Página 4" src="ima/Ima1_P5I1.png">
+                    <img alt="" src="ima/Ima1_P5I1.png">
                 </div>
             </div>
 
             <div class="pRight">
+                <p style="text-align:justify;">
+                    <span style="font-size:12px;color:#000000"></span>
+                </p>
                 <div class="imaCenter">
-                    <img alt="Página 5" src="ima/Ima1_P6I1.png">
+                    <img alt="" src="ima/Ima1_P6I1.png">
                 </div>
             </div>
 
             <div class="pLeft">
+                <p style="text-align:justify;">
+                    <span style="font-size:12px;color:#000000"></span>
+                </p>
                 <div class="imaCenter">
-                    <img alt="Página 6" src="ima/Ima1_P7I1.png">
+                    <img alt="" src="ima/Ima1_P7I1.png">
                 </div>
             </div>
 
             <div class="pRight">
+                <p style="text-align:justify;">
+                    <span style="font-size:12px;color:#000000"></span>
+                </p>
                 <div class="imaCenter">
-                    <img alt="Página 7" src="ima/Ima1_P8I1.png">
+                    <img alt="" src="ima/Ima1_P8I1.png">
                 </div>
             </div>
 
-            <!-- Última página en blanco -->
             <div class="pLeft"></div>
-
-            <!-- Contraportada -->
-            <div class="cover">
-                <div class="imaCenter">
-                    <img alt="Contraportada" src="ima/IP_Final.png">
-                </div>
-            </div>
         </div>
     </div>
 </body>
 </html>
+
