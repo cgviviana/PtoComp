@@ -8,35 +8,41 @@ body {
     background-color: #FFFFFF;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-/* Ajuste del tamaño del libro */
-#mybook {
-    width: 900px !important;
-    height: 600px !important;
-    margin: auto;
-    display: block;
-    padding: 5px;
-    background-position: center;
-    background-repeat: repeat;
-    border-radius: 5px;
-    box-shadow: 6px 6px 9px rgba(50, 50, 50, 0.75);
-}
-
+/* Ajuste responsivo del libro */
 .booklet {
-    width: 900px !important;
-    height: 600px !important;
+    width: 90vw; /* Ajuste responsivo */
+    height: 85vh; /* Ajuste responsivo */
     position: relative;
     margin: auto;
-    overflow: hidden !important;
+    overflow: visible !important;
+    max-width: 1200px; /* Limitar ancho máximo */
+    max-height: 800px; /* Limitar altura máxima */
 }
 
-/* Ajuste de las páginas del libro */
+/* Corrección de la portada y contraportada */
+.booklet .cover,
+.booklet .b-page-cover {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Ajustar página única para portada y contraportada */
+.booklet .b-page-cover:first-child,
+.booklet .b-page-cover:last-child {
+    display: block;
+}
+
+/* Ajustar tamaño y posición del contenido */
 .booklet .b-page {
     left: 0;
     top: 5px;
@@ -45,52 +51,39 @@ body {
     padding: 0;
 }
 
-.booklet .b-wrap {
-    top: 0;
-    position: absolute;
-}
-
-.booklet .b-wrap-left, .booklet .b-wrap-right {
-    background-color: #FFFFFF;
-}
-
-.booklet .b-page-cover {
-    padding: 0;
-    width: 100%;
+/* Ajuste de botones de navegación */
+.b-prev, .b-next {
+    width: 50px; /* Ajusta el tamaño de los botones */
     height: 100%;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+}
+
+.b-prev {
+    left: 5%;
+}
+
+.b-next {
+    right: 5%;
+}
+
+/* Ajustar tamaño del libro */
+#mybook {
+    width: 90vw;
+    height: 85vh;
+    margin: auto;
+    display: block;
+    max-width: 1200px;
+    max-height: 800px;
+    padding: 5px;
+    background-image: url("../ima/FP_3 Pto comp.jpg");
     background-position: center;
     background-repeat: repeat;
+    border-radius: 5px;
+    box-shadow: 6px 6px 9px rgba(50, 50, 50, 0.75);
 }
 
-/* Ajuste de navegación */
-.b-arrow-prev {
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 15%;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.b-arrow-next {
-    position: absolute;
-    right: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 15%;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-a:link {
-    color: #91962F;
-}
-
-a:visited {
-    color: #CACF67;
+#mybook p {
+    text-align: justify;
 }
