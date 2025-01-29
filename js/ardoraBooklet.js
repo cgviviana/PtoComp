@@ -1,46 +1,19 @@
-$(document).ready(function () {
+$(document).ready(function(){
     $("#mybook").booklet({
-        width: "90vw",
-        height: "85vh",
-        closed: true,
-        covers: true,
+        width: "90%", // Ajusta el ancho al 90% de la pantalla
+        height: "90%", // Ajusta el alto al 90% de la pantalla
         autoCenter: true,
-        speed: 800,
+        closed: true, // Para que la portada y contraportada sean individuales
+        covers: true, // Habilita la portada y contraportada
         pagePadding: 10,
-        pageNumbers: true,
-        manual: true,
-        overlays: true,
-        hoverWidth: 50,
-        hoverSpeed: 500,
-        hoverThreshold: 0.25,
+        speed: 800,
         arrows: true,
         keyboard: true,
-        next: ".b-next",
-        prev: ".b-prev",
         shadows: true,
-        shadowTopFwdWidth: 166,
-        shadowTopBackWidth: 166,
-        shadowBtmWidth: 50,
-        before: function () { },
-        after: function () { }
+        manual: true
     });
 
-    // Ajustar tamaño dinámicamente
-    $(window).resize(function () {
-        let windowWidth = $(window).width() * 0.9;
-        let windowHeight = $(window).height() * 0.85;
-        $("#mybook").booklet("option", {
-            width: windowWidth,
-            height: windowHeight
-        });
-    });
+    // Ajuste de botones de navegación para que sean equitativos
+    $(".b-prev").css({"width": "50%", "left": "0"});
+    $(".b-next").css({"width": "50%", "right": "0"});
 });
-
-// Función para reproducir audio
-function playIt(sound) {
-    var sounds = document.getElementsByTagName("audio");
-    for (var i = 0; i < sounds.length; i++) sounds[i].pause();
-    var file = document.getElementById(sound);
-    file.load();
-    file.play();
-}
