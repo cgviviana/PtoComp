@@ -1,8 +1,8 @@
 $(document).ready(function(){
     $("#mybook").booklet({
         name: "Mi Libro",
-        width: 900,
-        height: 600,
+        width: 900, // Ajusta el ancho para evitar que se expandan las páginas
+        height: 600, // Ajusta la altura adecuada
         speed: 800,
         direction: "LTR",
         startingPage: 0,  // Asegurar que inicia en la portada
@@ -17,7 +17,7 @@ $(document).ready(function(){
         pageNumbers: true,
         manual: true,  // Permitir clics en las páginas para navegar
         hovers: true,
-        hoverWidth: 100,  // Ampliar área de clics para avanzar/retroceder
+        hoverWidth: 50,  // Ajustar área de clics
         hoverSpeed: 500,
         hoverThreshold: 0.5,
         overlays: true,
