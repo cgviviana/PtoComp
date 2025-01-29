@@ -20,6 +20,9 @@ keyboard:true,
       next:null, prev:null, auto:false, delay:5000, pause:null, play:null, menu:null,pageSelector:false,chapterSelector:false,
 shadows:true,shadowTopFwdWidth:166,shadowTopBackWidth:166,shadowBtmWidth:50,before:function(){},after:function(){}
       }
- $("#mybook").booklet();$(".b-prev").attr("tabindex","0");$(".b-next").attr("tabindex","0");
+ $("#mybook").booklet();$(".b-prev").attr("tabindex","0");$(".b-next").attr("tabindex","0"); autoCenter: true,
+closed: true,
+covers: true,
+
 });
 function playIt(sound){var sounds=document.getElementsByTagName("audio");for(i=0; i<sounds.length; i++) sounds[i].pause();var file=document.getElementById(sound);file.load();file.play();}
