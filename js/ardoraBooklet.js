@@ -1,32 +1,29 @@
 $(document).ready(function(){
     $("#mybook").booklet({
         name: "Libro Interactivo",
-        width: 900,  // Ancho del libro
-        height: 600,  // Alto del libro
+        width: 900,  
+        height: 600,  
         speed: 800,  
         direction: "LTR",
-        startingPage: 0,  // Asegurar que inicia en la portada
+        startingPage: 0,  // Inicia en la portada
         easing: "easeInOutQuad",
         easeIn: "easeInQuad",
         easeOut: "easeOutQuad",
-        closed: true,  // Simular un libro real con portada
-        covers: true,  // Habilitar portada y contraportada
+        closed: true,  // Activa portada y contraportada
+        covers: true,  // Habilita portada
         autoCenter: true,  
         pagePadding: 10,
         pageBorder: 0,
         pageNumbers: true,  
-        manual: true,  // Permitir clics en páginas para navegación
+        manual: true,  
         hovers: true,
-        hoverWidth: 100,  // Aumentar área de clic para evitar problemas
+        hoverWidth: 50,  
         hoverSpeed: 500,
         hoverThreshold: 0.5,
         overlays: true,
-        tabs: false,
         arrows: true, // Habilitar flechas de navegación
         arrowsHide: false,
         cursor: "pointer",
-        hash: false,
-        hashTitleText: " - Página ",
         keyboard: true,
         shadows: true,
         shadowTopFwdWidth: 166,
@@ -48,15 +45,3 @@ $(document).ready(function(){
     $(".b-prev").attr("tabindex", "0");
     $(".b-next").attr("tabindex", "0");
 });
-
-// Función para reproducir sonidos sin interferencias
-function playIt(sound) {
-    var sounds = document.getElementsByTagName("audio");
-    for (var i = 0; i < sounds.length; i++) {
-        sounds[i].pause();
-    }
-    var file = document.getElementById(sound);
-    file.load();
-    file.play();
-}
-
