@@ -8,18 +8,16 @@ body {
     background-color: #FFFFFF;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Ocultar el desplazamiento horizontal */
+    overflow-x: hidden;
 }
 
-/* Ajuste responsivo del libro */
+/* Ajuste del tamaño del libro */
 .booklet {
-    width: 90vw; /* Se adapta a la pantalla */
-    height: 85vh; /* Se adapta a la pantalla */
+    width: 1000px; 
+    height: 700px;
     position: relative;
     margin: auto;
-    overflow: hidden !important;
-    max-width: 1100px; /* Limita el ancho */
-    max-height: 750px; /* Limita la altura */
+    overflow: visible !important;
 }
 
 .booklet .b-page {
@@ -45,6 +43,7 @@ body {
     height: 100%;
 }
 
+/* Portada y contraportada */
 .booklet .b-page-cover {
     padding: 0;
     width: 100%;
@@ -55,30 +54,16 @@ body {
     background-size: cover;
 }
 
-.booklet .b-counter {
-    bottom: 10px;
-    position: absolute;
-    display: block;
-    width: 90%;
-    color: #000000;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 10px;
-    text-align: center;
-}
-
-/* Asegurar que el libro mantenga sus proporciones */
+/* Configurar el libro correctamente */
 #mybook {
-    width: 90vw;
-    height: 85vh;
+    width: 1000px;
+    height: 700px;
     margin: auto;
     display: block;
-    max-width: 1100px;
-    max-height: 750px;
     padding: 5px;
     background-image: url("../ima/FP_3 Pto comp.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
     border-radius: 5px;
     box-shadow: 6px 6px 9px rgba(50, 50, 50, 0.75);
 }
@@ -112,12 +97,11 @@ header p {
     font-size: 12px;
 }
 
-/* Ajuste del contenido para que se vea completo */
+/* Asegurar que el contenido se ajuste correctamente */
 #pag1 {
     background-color: #FFFFFF;
     background-image: none;
     height: 100%;
-    overflow: auto; /* Permite desplazamiento si el contenido es grande */
 }
 
 a:link {
@@ -127,3 +111,4 @@ a:link {
 a:visited {
     color: #CACF67;
 }
+
