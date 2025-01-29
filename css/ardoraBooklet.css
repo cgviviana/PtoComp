@@ -11,32 +11,50 @@ body {
     overflow-x: hidden;
 }
 
-/* Centra completamente el libro */
+/* Ajuste del tamaño del libro */
 #mybook {
-    width: 90vw; /* Ajuste dinámico para que el libro se adapte a la pantalla */
-    height: 85vh;
+    width: 800px;
+    height: 600px;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1000px; /* Evita que crezca demasiado en pantallas grandes */
-    max-height: 700px;
-    padding: 5px;
+    display: block;
+    padding: 10px;
     background-image: url("../ima/FP_3 Pto comp.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     border-radius: 5px;
     box-shadow: 6px 6px 9px rgba(50, 50, 50, 0.75);
 }
 
-/* Asegurar que las páginas del libro estén bien alineadas */
+/* Asegurar que las páginas estén bien alineadas y ocultas cuando no se ven */
 .booklet {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* No permitir que todas las páginas sean visibles a la vez */
+.booklet .b-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+/* Solo mostrar la página activa */
+.booklet .b-page-active {
+    visibility: visible;
+}
+
+/* Ajuste para la portada y contraportada */
+.booklet .b-page-cover {
+    width: 100%;
+    height: 100%;
+    background-image: url("../ima/FP_3 Pto comp.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Ajuste de los botones de navegación */
@@ -50,7 +68,6 @@ body {
     z-index: 100;
 }
 
-/* Espacio igual para avanzar y retroceder */
 .b-arrow-prev {
     left: 5%;
     background: url("../booklet/images/arrow-prev.png") no-repeat center;
