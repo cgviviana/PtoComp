@@ -1,58 +1,55 @@
 $(document).ready(function(){
-   $("#mybook").booklet({
-      name: "Mi Libro",
-      width: 900, // Ajuste del tamaño
-      height: 600,
-      speed: 800,
-      direction: "LTR",
-      startingPage: 0, // Iniciar en la portada
-      easing: "easeInOutQuad",
-      easeIn: "easeInQuad",
-      easeOut: "easeOutQuad",
-      closed: true, // Activar modo libro cerrado
-      covers: true, // Incluir portada y contraportada
-      autoCenter: true,
-      pagePadding: 10,
-      pageBorder: 0,
-      pageNumbers: true,
-      manual: true, // Permitir clics en los bordes
-      hovers: true,
-      hoverWidth: 50,
-      hoverSpeed: 500,
-      hoverThreshold: 0.25,
-      overlays: true,
-      tabs: false,
-      tabWidth: 60,
-      tabHeight: 20,
-      nextControlText: "Next",
-      previousControlText: "Previous",
-      nextControlTitle: "Next",
-      previousControlTitle: "Previous",
-      arrows: true, // Activar flechas de navegación
-      arrowsHide: false,
-      cursor: "pointer",
-      hash: false,
-      hashTitleText: " - Page ",
-      keyboard: true,
-      next: ".b-arrow-next", // Asignar botón de siguiente página
-      prev: ".b-arrow-prev", // Asignar botón de página anterior
-      auto: false,
-      delay: 5000,
-      pause: null,
-      play: null,
-      menu: null,
-      pageSelector: false,
-      chapterSelector: false,
-      shadows: true,
-      shadowTopFwdWidth: 166,
-      shadowTopBackWidth: 166,
-      shadowBtmWidth: 50,
-      before: function(){},
-      after: function(){}
-   });
+    $("#mybook").booklet({
+        name: "Mi Libro",
+        width: 900,
+        height: 600,
+        speed: 800,
+        direction: "LTR",
+        startingPage: 0,  // Asegurar que inicia en la portada
+        easing: "easeInOutQuad",
+        easeIn: "easeInQuad",
+        easeOut: "easeOutQuad",
+        closed: true,  // Habilitar efecto de libro cerrado
+        covers: true,  // Mostrar portada y contraportada
+        autoCenter: true,
+        pagePadding: 10,
+        pageBorder: 0,
+        pageNumbers: true,
+        manual: true,  // Permitir clics en las páginas para navegar
+        hovers: true,
+        hoverWidth: 100,  // Ampliar área de clics para avanzar/retroceder
+        hoverSpeed: 500,
+        hoverThreshold: 0.5,
+        overlays: true,
+        tabs: false,
+        arrows: true, // Mostrar flechas de navegación
+        arrowsHide: false,
+        cursor: "pointer",
+        hash: false,
+        hashTitleText: " - Page ",
+        keyboard: true,
+        next: ".b-arrow-next", // Botón de siguiente página
+        prev: ".b-arrow-prev", // Botón de página anterior
+        auto: false,
+        shadows: true,
+        shadowTopFwdWidth: 166,
+        shadowTopBackWidth: 166,
+        shadowBtmWidth: 50,
+        before: function(){ console.log("Página cambiada"); },
+        after: function(){ console.log("Nueva página mostrada"); }
+    });
 
-   $(".b-prev").attr("tabindex","0");
-   $(".b-next").attr("tabindex","0");
+    // Verificar si las flechas de navegación están funcionando correctamente
+    $(".b-arrow-prev").on("click", function() {
+        $("#mybook").booklet("prev");
+    });
+
+    $(".b-arrow-next").on("click", function() {
+        $("#mybook").booklet("next");
+    });
+
+    $(".b-prev").attr("tabindex", "0");
+    $(".b-next").attr("tabindex", "0");
 });
 
 // Función para reproducir sonidos sin interferencias
