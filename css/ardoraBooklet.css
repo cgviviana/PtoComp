@@ -13,7 +13,7 @@ body {
 
 /* Ajuste del tamaño del libro */
 #mybook {
-    width: 800px;
+    width: 900px;
     height: 600px;
     margin: auto;
     display: block;
@@ -26,25 +26,27 @@ body {
     box-shadow: 6px 6px 9px rgba(50, 50, 50, 0.75);
 }
 
-/* Asegurar que las páginas estén bien alineadas y ocultas cuando no se ven */
+/* Estilos para asegurar que solo se vean dos páginas a la vez */
 .booklet {
-    width: 100%;
-    height: 100%;
+    width: 900px;
+    height: 600px;
     position: relative;
     overflow: hidden;
 }
 
-/* No permitir que todas las páginas sean visibles a la vez */
+/* Asegurar que las páginas estén bien alineadas */
 .booklet .b-page {
     position: absolute;
-    width: 100%;
+    width: 50%;
     height: 100%;
     visibility: hidden;
+    overflow: hidden;
 }
 
-/* Solo mostrar la página activa */
+/* Asegurar que las páginas activas sean visibles */
 .booklet .b-page-active {
     visibility: visible;
+    display: block;
 }
 
 /* Ajuste para la portada y contraportada */
