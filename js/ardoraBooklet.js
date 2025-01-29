@@ -1,9 +1,9 @@
 $(document).ready(function(){
    $("#mybook").booklet({
       name: "Mi Libro",
-      width: 1000, // Se mantiene para un tamaño uniforme
-      height: 700, 
-      speed: 1000,
+      width: 800, // Tamaño más adecuado
+      height: 600, 
+      speed: 800,
       direction: "LTR",
       startingPage: 0, // Iniciar en la portada
       easing: "easeInOutQuad",
@@ -15,7 +15,7 @@ $(document).ready(function(){
       pagePadding: 10,
       pageBorder: 0,
       pageNumbers: true,
-      manual: true, // Permite clics manuales en los bordes
+      manual: true, // Permitir clics en los bordes
       hovers: true,
       hoverWidth: 50,
       hoverSpeed: 500,
@@ -64,4 +64,4 @@ function playIt(sound) {
     var file = document.getElementById(sound);
     file.load();
     file.play();
-} 
+}
