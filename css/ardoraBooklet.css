@@ -138,6 +138,13 @@ header{font-family:Verdana, Geneva, sans-serif;}
 header h1{font-family:Verdana, Geneva, sans-serif;color:#000000; font-size:16px; font-weight:normal;}
 header p{color:#000000; font-size:12px;}
 #pag1 {background-color:#FFFFFF; background-image:none;  height:100%;}
+#mybook {
+    width: 90% !important;
+    height: 80vh !important;
+    margin: auto;
+    display: block;
+}
+
 .audioPlay{cursor:pointer;}
 a:link {color:#91962F;}
 a:visited {color:#CACF67;}
