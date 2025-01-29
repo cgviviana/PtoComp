@@ -8,18 +8,18 @@ body {
     background-color: #FFFFFF;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Ocultar el desplazamiento horizontal */
 }
 
-/* Ajuste del tamaño del libro para que se vea bien en GitHub Pages */
+/* Ajuste responsivo del libro */
 .booklet {
-    width: 95vw; /* Ajuste responsivo */
-    height: 80vh; /* Ajuste responsivo */
+    width: 90vw; /* Se adapta a la pantalla */
+    height: 85vh; /* Se adapta a la pantalla */
     position: relative;
     margin: auto;
-    overflow: visible !important;
-    max-width: 1000px; /* Limitar ancho máximo */
-    max-height: 700px; /* Limitar altura máxima */
+    overflow: hidden !important;
+    max-width: 1100px; /* Limita el ancho */
+    max-height: 750px; /* Limita la altura */
 }
 
 .booklet .b-page {
@@ -51,7 +51,8 @@ body {
     height: 100%;
     background-image: url("../ima/FP_3 Pto comp.jpg");
     background-position: center;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .booklet .b-counter {
@@ -65,17 +66,19 @@ body {
     text-align: center;
 }
 
+/* Asegurar que el libro mantenga sus proporciones */
 #mybook {
     width: 90vw;
-    height: 80vh;
+    height: 85vh;
     margin: auto;
     display: block;
-    max-width: 1000px;
-    max-height: 700px;
+    max-width: 1100px;
+    max-height: 750px;
     padding: 5px;
     background-image: url("../ima/FP_3 Pto comp.jpg");
     background-position: center;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 5px;
     box-shadow: 6px 6px 9px rgba(50, 50, 50, 0.75);
 }
@@ -109,11 +112,12 @@ header p {
     font-size: 12px;
 }
 
-/* Asegurar que el contenido se ajuste correctamente */
+/* Ajuste del contenido para que se vea completo */
 #pag1 {
     background-color: #FFFFFF;
     background-image: none;
     height: 100%;
+    overflow: auto; /* Permite desplazamiento si el contenido es grande */
 }
 
 a:link {
