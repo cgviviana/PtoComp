@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!--Created by Ardora - www.webardora.net-->
-<!--ArdoraLibro-->
 <html lang="es">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,136 +14,43 @@
 
     <!-- Estilos CSS -->
     <link href="css/ardoraBooklet.css" type="text/css" rel="stylesheet" media="screen">
-
-    <!-- Estilos para ajustar tamaño del libro -->
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-            background-color: #f0f0f0; /* Fondo opcional */
-        }
-
-        #mybook {
-            width: 80vw !important;  /* 80% del ancho de la pantalla */
-            height: 80vh !important; /* 80% del alto de la pantalla */
-            max-width: 100%;
-            max-height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
-
-    <!-- Script para ajustar tamaño del libro -->
-    <script>
-        $(document).ready(function () {
-            function ajustarTamaño() {
-                let windowWidth = $(window).width() * 0.8;  // Ajusta al 80% del ancho
-                let windowHeight = $(window).height() * 0.8; // Ajusta al 80% del alto
-
-                $("#mybook").booklet({
-                    width: windowWidth,
-                    height: windowHeight,
-                    auto: false,
-                    overlays: true,
-                    pagePadding: 10,
-                    speed: 500
-                });
-            }
-
-            ajustarTamaño(); // Ejecutar al cargar
-
-            $(window).resize(function () {
-                ajustarTamaño(); // Ajustar al cambiar tamaño de la ventana
-            });
-        });
-    </script>
-
 </head>
 <body>
-    <header></header>
     <article>
         <div id="mybook">
+            <!-- Portada (Página única) -->
             <div class="cover">
-                <h3></h3>
+                <h3>Portada</h3>
                 <div class="imaCenter">
-                    <img alt="" src="ima/IP_Final.png">
+                    <img alt="Portada" src="ima/IP_Final.png">
                 </div>
-                <h4></h4>
             </div>
-            
-            <!-- Páginas del libro -->
-            <div class="pRight" id="pag1">
-                <p style="text-align:justify;">
-                    <span style="font-size:12px;color:#000000"></span>
-                </p>
-                <div class="imaCenter">
-                    <img alt="" src="ima/Ima1_P2I1.png">
-                </div>
+
+            <!-- Páginas internas -->
+            <div class="pRight">
+                <p>Página 1 - Contenido</p>
             </div>
 
             <div class="pLeft">
-                <p style="text-align:justify;">
-                    <span style="font-size:12px;color:#000000"></span>
-                </p>
-                <div class="imaCenter">
-                    <img alt="" src="ima/Ima1_P3I1.png">
-                </div>
+                <p>Página 2 - Contenido</p>
             </div>
 
             <div class="pRight">
-                <p style="text-align:justify;">
-                    <span style="font-size:12px;color:#000000"></span>
-                </p>
-                <div class="imaCenter">
-                    <img alt="" src="ima/Ima1_P4I1.png">
-                </div>
+                <p>Página 3 - Contenido</p>
             </div>
 
             <div class="pLeft">
-                <p style="text-align:justify;">
-                    <span style="font-size:12px;color:#000000"></span>
-                </p>
-                <div class="imaCenter">
-                    <img alt="" src="ima/Ima1_P5I1.png">
-                </div>
+                <p>Página 4 - Contenido</p>
             </div>
 
-            <div class="pRight">
-                <p style="text-align:justify;">
-                    <span style="font-size:12px;color:#000000"></span>
-                </p>
+            <!-- Contraportada (Página única) -->
+            <div class="cover">
+                <h3>Contraportada</h3>
                 <div class="imaCenter">
-                    <img alt="" src="ima/Ima1_P6I1.png">
+                    <img alt="Contraportada" src="ima/IP_Final.png">
                 </div>
             </div>
-
-            <div class="pLeft">
-                <p style="text-align:justify;">
-                    <span style="font-size:12px;color:#000000"></span>
-                </p>
-                <div class="imaCenter">
-                    <img alt="" src="ima/Ima1_P7I1.png">
-                </div>
-            </div>
-
-            <div class="pRight">
-                <p style="text-align:justify;">
-                    <span style="font-size:12px;color:#000000"></span>
-                </p>
-                <div class="imaCenter">
-                    <img alt="" src="ima/Ima1_P8I1.png">
-                </div>
-            </div>
-
         </div>
     </article>
 </body>
 </html>
-
-
-
