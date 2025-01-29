@@ -17,66 +17,86 @@
     <!-- Estilos CSS -->
     <link href="css/ardoraBooklet.css" type="text/css" rel="stylesheet" media="screen">
 
-    <!-- Estilos para ajustar tamaño del libro -->
+    <!-- Estilos para corregir el fondo y el tamaño -->
     <style>
+        /* Fondo fijo para que no se duplique */
         body {
+            background: url('ima/fondo.png') no-repeat center center fixed; 
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             overflow: hidden;
-            background-color: #f0f0f0;
+        }
+
+        /* Asegurar que el libro se mantiene centrado y en tamaño adecuado */
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
         }
 
         #mybook {
-            width: 80vw !important;
-            height: 80vh !important;
+            width: 85vw !important;
+            height: 90vh !important;
             max-width: 100%;
             max-height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
     </style>
 
-    <!-- Script para inicializar el libro correctamente -->
+    <!-- Script para inicializar el libro con el tamaño correcto -->
     <script>
         $(document).ready(function () {
             $("#mybook").booklet({
-                width: "80%",
+                width: "85%",
                 height: "90%",
                 auto: false,
                 overlays: true,
                 pagePadding: 10,
                 speed: 500,
-                closed: true,         // Activa modo libro con portada y contraportada
-                covers: true,         // Muestra la portada como una sola página
-                pageNumbers: false,   // Oculta los números de página
+                closed: true,         // Portada sola
+                covers: true,         // Activa la portada individual
+                pageNumbers: false,   // Quita los números de página
                 start: 0,             // Inicia en la primera página
-                direction: "LTR"      // Dirección de lectura de izquierda a derecha
+                direction: "LTR"      // Dirección de lectura
+            });
+
+            // Ajustar tamaño cuando se cambia la ventana
+            $(window).resize(function () {
+                $("#mybook").booklet("option", {
+                    width: $(window).width() * 0.85,
+                    height: $(window).height() * 0.9
+                });
             });
         });
     </script>
 
 </head>
 <body>
-    <header></header>
-    <article>
+    <div id="container">
         <div id="mybook">
-            <!-- Portada (se mostrará sola) -->
+            <!-- Portada -->
             <div class="cover">
-                <h3></h3>
                 <div class="imaCenter">
                     <img alt="Portada" src="ima/IP_Final.png">
                 </div>
-                <h4></h4>
             </div>
 
             <!-- Página en blanco para que la primera hoja sea doble -->
             <div class="pLeft"></div>
 
-            <!-- Contenido del libro -->
+            <!-- Páginas del contenido -->
             <div class="pRight">
                 <div class="imaCenter">
                     <img alt="Página 1" src="ima/Ima1_P2I1.png">
@@ -122,15 +142,13 @@
             <!-- Última página en blanco -->
             <div class="pLeft"></div>
 
-            <!-- Contraportada (se mostrará sola) -->
+            <!-- Contraportada -->
             <div class="cover">
-                <h3></h3>
                 <div class="imaCenter">
                     <img alt="Contraportada" src="ima/IP_Final.png">
                 </div>
-                <h4></h4>
             </div>
         </div>
-    </article>
+    </div>
 </body>
 </html>
